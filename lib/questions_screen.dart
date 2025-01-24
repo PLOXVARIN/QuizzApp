@@ -3,7 +3,6 @@ import 'package:myapp/answer_button.dart';
 import 'package:myapp/data/quizz.dart';
 import 'package:google_fonts/google_fonts.dart' ;
 import 'package:myapp/results_screen.dart';
-import 'package:myapp/start_screen.dart';
 
 
 class QuestionsScreen extends StatefulWidget {
@@ -26,19 +25,12 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
       if (currentQuestionIndex <questions.length - 1){
       currentQuestionIndex++;
       }else{
-        Navigator.of(context).pushReplacement(
-  MaterialPageRoute(
-    builder: (context) => ResultScreen(
-      totalQuestions: 6, // เปลี่ยนเป็นค่าจริงจากเกม
-      correctAnswers: 2, // เปลี่ยนเป็นค่าที่คำนวณจากผู้ใช้
-      onRestart: () {
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const StartScreen()),
-        );
-      },
-    ),
-  ),
-
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) =>
+              ResultScreen(selectedAnswers: selectedAnswers),
+            )
         ) ;
       }
     });
