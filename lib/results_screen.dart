@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ResultScreen extends StatelessWidget {
   final int totalQuestions;
   final int correctAnswers;
-  final VoidCallback onRestart; // ✅ รับฟังก์ชันสำหรับ Restart
+  final VoidCallback onRestart; 
 
   const ResultScreen({
     super.key,
@@ -38,7 +38,7 @@ class ResultScreen extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               ElevatedButton.icon(
-                onPressed: onRestart, // ✅ กดแล้วเรียกฟังก์ชัน onRestart
+                onPressed: onRestart, 
                 icon: const Icon(Icons.refresh, color: Colors.white),
                 label: const Text(
                   "Restart Quiz",
